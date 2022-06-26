@@ -1,0 +1,54 @@
+Loyiha 7 ta qismga bolib yasaldi
+
+1-qism da :
+Loyiha yaratildi, restaurant va customer app lari yaratildi.
+sozlamalar qilindi.
+base, footer navigation page yaratiladi va sytle beriladi
+about and index pagelari yaratildi bu pagelar uchun viewlar yozildi
+about, index page lariga style berildi va bu pagelarda ish yakunlandi
+
+2-qism
+customer app ida ish olib borildi. ordering (buyurtma berish) qismi qilindi.
+
+Models.py da MenuItem, Category, OrderModel modellari yaratildi
+MenuItem - bu restaranning menusida bor ovqatlar haqidagi malumotlarni saqlovchi model
+Category - ovqat toifalari model
+OrderModel - bu mijoz bergan buyutmani ifidalovchi model unda
+qaysi ovqatlar buyurtma berilganligi va buyurt narxi bo'ladi
+
+order va orderconfirmation page lari yaratiladi va sytle beriladi
+
+Order view si yaratiladi bu view mijoz harid qilgan ovqatlardan
+buyurma tashkil qiladi va orderModel ga saqlaydi.
+order haqidagi maullmotlarni orderconfirmayion page da korsatadi
+
+3-qism
+Ordering system davom ettiriladi
+customer haqidagi malumotlar order ga qoshiladi va ordering system yakunlanadi
+
+4-qism
+bu qismda to'lov tizimi qoshilishi kerak edi ( keyinga qoldirildi)
+
+5-qism
+staff login and restaurand dashboard lar qo'shiladi
+
+birnchi allauth yordamida login qismi yoziladi.
+signup qilish imkoniyati o'chiriladi.
+admin panelda Staff guruhi yaratilib bu guruhga kiruvchi userlar login qilolishadi
+login qilish orqali restarant dashboard page iga o'tiladi u yerda kunlik buyutmalar malumoti beriladi beriladi
+
+dashboard view yoziladi va dashbord page yaratiladi.
+
+6-qism
+
+Order detail
+order detail page yaratiladi va style beriladi
+bu page da hali manzilga yetkazilmagan buyurtmalar haqida malumot beriladi.
+Orderdatail view yoziladi
+
+7-qism
+oxirgi qismda menu page va search qism qoshiladi
+menu page yaratiladi style beriladu bu page da MenuItem dagi ovqatlar korinadi
+Menu va MenuSearch viewlari yoziladi
+
+
