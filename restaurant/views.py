@@ -4,6 +4,7 @@ from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.utils.timezone import datetime
 from customers.models import OrderModel
 
+
 class Dashboard(UserPassesTestMixin, LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         # get the current date
@@ -31,6 +32,7 @@ class Dashboard(UserPassesTestMixin, LoginRequiredMixin, View):
 
     def test_func(self):
         return self.request.user.groups.filter(name='Staff').exists()
+
 
 class OrderDetails(LoginRequiredMixin, UserPassesTestMixin, View):
 

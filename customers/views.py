@@ -1,22 +1,22 @@
 import json
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect
-from  django.db.models import Q
+from django.db.models import Q
 from django.views import View
 
-from .models import MenuItem,OrderModel
+from .models import MenuItem, OrderModel
 
-# Create your views here.
 
 class Index(View):
 
     def get(self, request, *args, **kwargs):
         return render(request,'customer/index.html')
 
-class About(View):
 
+class About(View):
     def get(self,request, *args, **kwargs):
         return render(request,'customer/about.html')
+
 
 class Order(View):
     def get(self, request, *args, **kwargs):
@@ -97,6 +97,7 @@ class Order(View):
         }
         return redirect('order-confirmation', pk=order.pk)
 
+
 class OrderConfirmation(View):
     def get(self, request, pk, *args, **kwargs):
         order = OrderModel.objects.get(pk=pk)
@@ -111,22 +112,19 @@ class OrderConfirmation(View):
     def post(self, request, pk, *args, **kwargs):
         print(request.body)
         data = json.loads(request.body)
-        '''
-        if data['isPaid']:
-            order = OrderModel.objects.get(pk=pk)
-            order.is_paid = True
-            order.save()
-        '''
         return redirect('payment-confirmation')
+
 
 class OrderPayConfirmation(View):
     def get(self, request, *args, **kwargs):
         return render(request,'customer/order_pay_confirmation.html')
 
+
 class Menu(View):
     def get(self, request, *args, **kwargs):
         menu_items = MenuItem.objects.all()
         return render(request, 'customer/menu.html', {'menu_items': menu_items})
+
 
 class MenuSearch(View):
     def get(self, request, *args, **kwargs):
